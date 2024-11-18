@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define Pueblos 10
+#define Pueblos 100
 #define Bebidas 8
 
 void Matriz_0(int arr[Pueblos][Bebidas]) 
