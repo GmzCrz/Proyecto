@@ -27,15 +27,13 @@ void Datos_Bebidas_Pueblo(int arr[Pueblos][Bebidas])
             printf("Número de la bebida (-1 para terminar): ");
             scanf("%d", &bebida);
 
-            // Validar si el usuario quiere terminar
             if (bebida != -1) 
             {
-                // Validar si la bebida está dentro del rango
                 if (bebida >= 0 && bebida < Bebidas) 
                 {
                     printf("Cantidad en litros: ");
                     scanf("%d", &cantidad);
-                    arr[i][bebida] += cantidad; // Actualizar la matriz
+                    arr[i][bebida] = cantidad;
                 } 
                 else 
                 {
@@ -43,7 +41,7 @@ void Datos_Bebidas_Pueblo(int arr[Pueblos][Bebidas])
                 }
             }
         } 
-        while (bebida != -1); // Continuar hasta que el usuario introduzca -1
+        while (bebida != -1);
     }
 }
 
