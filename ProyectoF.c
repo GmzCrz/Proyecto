@@ -17,33 +17,35 @@ void Matriz_0(int arr[Pueblos][Bebidas])
     }
 
 void Datos_Bebidas_Pueblo(int arr[Pueblos][Bebidas]) 
+{
+    int bebida, cantidad;
+    for (int i = 0; i < Pueblos; i++) 
     {
-        int bebida, cantidad;
-        for (int i = 0; i < Pueblos; i++) 
+        printf("Introduce las bebidas consumidas en el pueblo %d:\n", i);
+        do 
+        {
+            printf("Número de la bebida (-1 para terminar): ");
+            scanf("%d", &bebida);
+
+            // Validar si el usuario quiere terminar
+            if (bebida != -1) 
             {
-                printf("Introduce las bebidas consumidas en el pueblo %d:\n", i);
-                do 
-                    {
-                        printf("Número de la bebida (-1 para terminar): ");
-                        scanf("%d", &bebida);
-                        if (bebida == -1) 
-                            {
-                                break; 
-                            }
-                        if (bebida >= 0 && bebida < Bebidas) 
-                            {
-                                printf("Cantidad en litros: ");
-                                scanf("%d", &cantidad);
-                                arr[i][bebida] += cantidad;
-                            } 
-                        else 
-                            {
-                                printf("Número de bebida inválido. Intenta nuevamente.\n");
-                            }
-                    } 
-                while (bebida != -1);
+                // Validar si la bebida está dentro del rango
+                if (bebida >= 0 && bebida < Bebidas) 
+                {
+                    printf("Cantidad en litros: ");
+                    scanf("%d", &cantidad);
+                    arr[i][bebida] += cantidad; // Actualizar la matriz
+                } 
+                else 
+                {
+                    printf("Número de bebida inválido. Intenta nuevamente.\n");
+                }
             }
+        } 
+        while (bebida != -1); // Continuar hasta que el usuario introduzca -1
     }
+}
 
 void Bebida_MasBebida(int arr[Pueblos][Bebidas])
   {
